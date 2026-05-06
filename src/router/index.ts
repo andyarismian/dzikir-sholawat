@@ -25,6 +25,11 @@ const router = createRouter({
       name: 'dzikir-detail',
       component: () => import('../views/DzikirDetailView.vue'),
     },
+    {
+      path: '/sholawat/:id',
+      name: 'sholawat-detail',
+      component: () => import('../views/SholawatDetailView.vue'),
+    },
   ],
 })
 

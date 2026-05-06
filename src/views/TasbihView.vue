@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import imgTasbihCard from "@/assets/img/tasbih-card.png"
+import imgTasbihCard from "@/assets/img/tasbih-banner.png"
 import jsonListTasbih from "@/assets/data/tasbih.json"
 import TasbihListComponent from "@/components/tasbih/TasbihListComponent.vue"
 

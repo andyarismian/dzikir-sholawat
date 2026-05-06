@@ -37,7 +37,7 @@ onMounted(async () => {
                         <polyline points="18 17 13 12 18 7" />
                     </svg>
                 </RouterLink>
-                <h3 class="banner-text glass">{{ dzikirName }}</h3>
+                <h3 class="banner-text glass" style="font-weight: 600;">{{ dzikirName }}</h3>
             </div>
         </div>
         <div v-if="dzikirData">
@@ -45,7 +45,7 @@ onMounted(async () => {
                 <div class="dzikir-card">
                     <h3 style="font-weight: 500; margin-bottom: 10px;">{{ item.title }}</h3>
                     <p style="font-size: 1.2em; font-weight: bold; text-align: right;margin-bottom:8px;">{{ item.arabic
-                        }}</p>
+                    }}</p>
                     <p style="margin-bottom:8px;">{{ item.latin }}</p>
                     <p style="font-weight: lighter; font-style: italic;">"{{ item.translation }}"</p>
                 </div>

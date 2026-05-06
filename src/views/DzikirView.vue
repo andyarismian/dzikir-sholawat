@@ -1,24 +1,13 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
-import imgSetelahSholat from "@/assets/img/setelah-sholat.jpg"
-import imgPagi from "@/assets/img/pagi.png"
-import imgPetang from "@/assets/img/petang.png"
-import imgHarian from "@/assets/img/harian.jpg"
 import imgDzikirBanner from "@/assets/img/dzikir-banner.jpg"
 import listDzikirJson from "@/assets/data/dzikir.json"
-
-const imgMap: Record<string, string> = {
-    imgSetelahSholat,
-    imgPagi,
-    imgPetang,
-    imgHarian,
-}
 
 const listDzikir = ref(
     listDzikirJson.map(item => ({
         ...item,
-        img: imgMap[item.img] // ganti string → URL asli
+        image: new URL(`/src/assets/img/${item.imgName}`, import.meta.url).href
     }))
 )
 
@@ -31,7 +20,7 @@ const listDzikir = ref(
         </div>
         <div v-for="dzikir in listDzikir" :key="dzikir.id" class="dzikir-wrapper">
             <div>
-                <img :src="dzikir.img" :alt="dzikir.name" class="card-img glass" />
+                <img :src="dzikir.image" :alt="dzikir.name" class="card-img glass" />
             </div>
             <div class="card-text-list">
                 <h3 class="card-text">{{ dzikir.name }}</h3>
@@ -66,11 +55,6 @@ const listDzikir = ref(
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--vt-c-white);
-    font-family: "Lato", sans-serif !important;
-    font-weight: 300;
-    font-size: 1.2rem;
-    font-style: bold;
     height: 230px;
     width: 100%;
     border-radius: 16px;
@@ -92,7 +76,12 @@ const listDzikir = ref(
     text-align: center;
     padding: 0 20px;
     color: var(--vt-c-black);
-    width: 100%;
+    width: 90%;
+    border-radius: 16px;
+    font-family: "Lato", sans-serif !important;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-style: bold;
 }
 
 .card-img {
